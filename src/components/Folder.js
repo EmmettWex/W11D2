@@ -5,12 +5,12 @@ import React, { useState} from 'react';
 //  { title: 'one', content: 'I am the first' }
 
 const Headers = ({ titles, currentTab, selectTab }) => {
-  const handleClick = (e) => {
-    const idx = parseInt(e.target.id, 10);
-    selectTab(idx);
-  }
+    const handleClick = (e) => {
+        const idx = parseInt(e.target.id, 10);
+        selectTab(idx);
+    }
 
-  const tabs = titles.map((title, idx) => {
+    const tabs = titles.map((title, idx) => {
     const headerClass = (idx === currentTab) ? 'active' : '';
 
     return (
@@ -35,29 +35,31 @@ const Headers = ({ titles, currentTab, selectTab }) => {
 
 function Folder(props) {
 
-  const [currentTab, setCurrentTab] = useState(0)
+    const [currentTab, setCurrentTab] = useState(0)
 
- const selectTab = (num) => {
-      setCurrentTab(currentTab => (num))
+    const selectTab = (num) => {
+        setCurrentTab(currentTab => (num))
 
     }
+    
     const folder = props.folders[currentTab];
     const titles = props.folders.map((folder) => folder.title);
+    
     return (
-      <section className="tabs-section">
-        <h1>Tabs</h1>
-        <div className='tabs'>
-          <Headers
-            titles={titles}
-            currentTab={currentTab}
-            selectTab={selectTab}
-          />
-          <div className='tab-content'>
-            {folder.content}
+        <section className="tabs-section">
+            <h1>Tabs</h1>
+            <div className='tabs'>
+              <Headers
+                  titles={titles}
+                  currentTab={currentTab}
+                  selectTab={selectTab}
+              />
+              <div className='tab-content'>
+                  {folder.content}
+              </div>
           </div>
-        </div>
-      </section>
-    );
+        </section>
+      );
 }
 
 
