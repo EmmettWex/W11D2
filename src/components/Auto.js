@@ -47,6 +47,7 @@ function AutoComplete(props) {
   const matches = () => {
     // const { inputVal } = this.state;
     const { names } = props;
+    // const names = props.names;
     const inputLength = inputVal.length;
     const matches = [];
 

@@ -29,7 +29,7 @@ function ClockToggle(props) {
 
     const tick = () => {
         setTime( time => (new Date()) );
-      }
+    }
 
       let hours = time.getHours();
       let minutes = time.getMinutes();
@@ -66,8 +66,6 @@ function ClockToggle(props) {
           </div>
         </section>
       );
-    
-
 }
 
 

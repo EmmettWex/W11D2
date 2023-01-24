@@ -26,7 +26,7 @@ function App(props) {
   const [showClock, setShowClock] = useState(true);
 
   const toggleClock = () => setShowClock(showClock => (!showClock));
-
+  
   return (
     <div className="widgets">
       <Folder folders={folders} />
